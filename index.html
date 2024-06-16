@@ -1,13 +1,58 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>首页</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="search">
+        <div><a href="./search.html">搜索</a></div>
+      </div>
+      <nav>
+        <div class="shop compre shopActive">
+          综合
+        </div>
+        <div class="shop sell">
+          销量
+        </div>
+        <div class="shop new">
+          上新
+        </div>
+        <div class="sort">
+          排序
+          <span class="sortBtn iconfont icon-angle-up"></span>
+          <span class="sortBtn iconfont icon-angle-down"></span>
+        </div>
+        <div class="arrange">
+          <span class="iconfont icon-gengduo-2"></span>
+          <!-- icon-fenlei-xuanzhong   icon-gengduo-2-->
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="wrapper">
+        <div class="con list">
+          <!-- grid -->
+          <dl>
+            <dt><img src="" alt=""></dt>
+            <dd>
+              <h2>商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介</h2>
+              <h3>月销000笔</h3>
+              <p>￥999.99</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="./src/javascript/index.js"></script>
+</body>
+
 </html>
