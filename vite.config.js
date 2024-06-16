@@ -8,7 +8,7 @@ export default defineConfig({
     define: {
 
     },
-    base: '/online',
+    base: '/6.16exam',
     build: {
         rollupOptions: {
             input: {
