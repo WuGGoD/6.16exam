@@ -1,0 +1,46 @@
+@import './common.scss';
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    >a {
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 3rem;
+        font-size: 2rem;
+        color: #FFFFFF;
+        background-color: rgba($color: #000000, $alpha: .6);
+    }
+}
+
+
+img {
+    width: 100%;
+}
+
+.price {
+    font-size: 2rem;
+    color: #FF0000;
+}
+
+span {
+    font-size: 1.2rem;
+
+    i {
+        text-decoration: line-through;
+    }
+}
+
+.info {
+    padding: 1rem .5rem 0;
+}
+
+.express {
+    display: flex;
+    justify-content: space-between;
+}
