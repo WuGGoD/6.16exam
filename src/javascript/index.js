@@ -11,7 +11,13 @@ new BScroll('.wrapper', {
 
 async function render(url) {
     const res = await axios.get(url)
-    const data = res.data.items
+    let data = res.data.items
+    if ($('.asscend')) {
+        data = data.sort((a, b) => a.price - b.price)
+    }
+    if ($('.descend')) {
+        data = data.sort((a, b) => b.price - a.price)
+    }
     $('.con').innerHTML = data.map((item, index) => `
           <dl data_id=${item.item_id}>
             <dt><img src="${item.img}" alt=""></dt>
@@ -40,9 +46,6 @@ document.addEventListener('click', e => {
     if (target.className === 'shop new shopActive') {
         render('https://zyxcl.xyz/exam_api/sx')
     }
-    if (target.className === 'sort') {
-        $('.active') ? $A('span', target).forEach(item => item.classList.toggle('active')) : $('span', target).classList.add('active')
-    }
     if (target.className === 'arrange') {
         if ($('.icon-gengduo-2')) {
             $('.con').className = 'con grid'
@@ -55,5 +58,23 @@ document.addEventListener('click', e => {
     if (target.nodeName === 'DL') {
         localStorage.setItem('itemInfo', target.getAttribute('data_id'))
         location.assign('./detail.html')
+    }
+    if (target.classList.contains('sort')) {
+        console.log($A('span', target)[0], $A('span', target)[1])
+        $('.active') && $('.active').classList.remove('active')
+        if ($('.asscend')) {
+            target.className = 'sort descend'
+            $A('span', target)[1].classList.add('active')
+            render(localStorage.getItem('itemOrigin'))
+            return
+        }
+        if ($('.descend')) {
+            target.className = 'sort'
+            render(localStorage.getItem('itemOrigin'))
+            return
+        }
+        target.className = 'sort asscend'
+        $A('span', target)[0].classList.add('active')
+        render(localStorage.getItem('itemOrigin'))
     }
 })
