@@ -13,8 +13,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                personalHomePage: resolve(__dirname, 'home.html'),
-                login: resolve(__dirname, 'login.html')
+                detail: resolve(__dirname, 'detail.html'),
+                search: resolve(__dirname, 'search.html')
             },
             output: {
                 chunkFileNames: 'javascript/[name]-[hash:8].js',
@@ -38,13 +38,6 @@ export default defineConfig({
     },
     server: {
         port: 8001,
-        open: true,
-        proxy: {
-            '/api': {
-                target: '',
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ''),
-            },
-        }
+        open: true
     },
 })
