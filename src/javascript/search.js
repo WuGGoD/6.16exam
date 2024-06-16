@@ -21,6 +21,5 @@ $('input').addEventListener('change', function () {
     $('.data').innerHTML = data.filter(item => item.title.includes(this.value.trim())).map(item =>
         `<p>${item.title}</p>`
     ).join('')
+    new BScroll('.wrapper')
 })
-
-new BScroll('.wrapper')

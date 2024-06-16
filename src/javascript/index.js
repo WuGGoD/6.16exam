@@ -4,10 +4,7 @@ import { $, $A } from './basicFn'
 import axios from 'axios'
 import BScroll from '@better-scroll/core'
 
-new BScroll('.wrapper', {
-    scrollY: true,
-    click: true
-})
+
 
 async function render(url) {
     const res = await axios.get(url)
@@ -28,6 +25,10 @@ async function render(url) {
             </dd>
           </dl>`).join('')
     localStorage.setItem('itemOrigin', url)
+    new BScroll('.wrapper', {
+        scrollY: true,
+        click: true
+    })
 }
 render('https://zyxcl.xyz/exam_api/zh')
 
