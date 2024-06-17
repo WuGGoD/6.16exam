@@ -1,2 +1,2 @@
 import{$ as i,b as e}from"./axios-B1hsza8D.js";import{B as n}from"./core.esm-DWWMfJTk.js";const a=[];async function s(){await e.get("https://zyxcl.xyz/exam_api/zh").then(t=>a.push(...t.data.items)),await e.get("https://zyxcl.xyz/exam_api/xl").then(t=>a.push(...t.data.items)),await e.get("https://zyxcl.xyz/exam_api/sx").then(t=>a.push(...t.data.items))}s().then(t=>{console.log(a)});i("input").addEventListener("change",function(){i(".data").innerHTML=a.filter(t=>t.title.includes(this.value.trim())).map(t=>`<p>${t.title}</p>`).join(""),new n(".wrapper")});
-//# sourceMappingURL=search-Dprr9QEj.js.map
+//# sourceMappingURL=search-BJrmwPaj.js.map
